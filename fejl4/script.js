@@ -61,7 +61,7 @@ function coinClicked() {
   coin.querySelector("img").classList.add("zoom_out");
 
   // når forsvind-animation er færdig: coinGone
-  coin.querySelector("img").addEventListener("animationend", coinGone);
+  coin.addEventListener("animationend", coinGone);
 
   // Giv point
   givPoint();

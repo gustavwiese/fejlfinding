@@ -80,7 +80,7 @@ function coinGone() {
   coin.classList.remove("paused");
 
   // genstart falling animation
-  coinRestart(this);
+  coinRestart.call(this);
 
   // gør det muligt at klikke på coin igen
   coin.addEventListener("click", coinClicked);

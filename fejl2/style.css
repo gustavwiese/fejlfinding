@@ -176,7 +176,7 @@ body {
 .zoom_out {
   animation-name: zoom_out;
   animation-duration: 1s;
-  animation-iteration-count: infinite;
+  animation-iteration-count:1;
   animation-fill-mode: forwards;
 }
 

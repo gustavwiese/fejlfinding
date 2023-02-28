@@ -83,7 +83,7 @@ function coinGone() {
   coinRestart.call(this);
 
   // gør det muligt at klikke på coin igen
-  coin.addEventListener("click", coinClicked());
+  coin.addEventListener("click", coinClicked);
 }
 
 function coinRestart() {

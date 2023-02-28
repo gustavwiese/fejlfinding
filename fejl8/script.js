@@ -20,16 +20,30 @@ function start() {
 }
 
 function genstartMønter() {
-  document.querySelector("#coin1_container").addEventListener("animationiteration", coinRestart);
-  document.querySelector("#coin2_container").addEventListener("animationiteration", coinRestart);
-  document.querySelector("#coin3_container").addEventListener("animationiteration", coinRestart);
+  document
+    .querySelector("#coin1_container")
+    .addEventListener("animationiteration", coinRestart);
+  document
+    .querySelector("#coin2_container")
+    .addEventListener("animationiteration", coinRestart);
+  document
+    .querySelector("#coin3_container")
+    .addEventListener("animationiteration", coinRestart);
 }
 
 function registrerClick() {
-  document.querySelector("#coin1_container").addEventListener("click", coinClicked);
-  document.querySelector("#coin2_container").addEventListener("click", coinClicked);
-  document.querySelector("#coin3_container").addEventListener("click", coinClicked);
-  document.querySelector("#bomb_container").addEventListener("click", bombClicked);
+  document
+    .querySelector("#coin1_container")
+    .addEventListener("click", coinClicked);
+  document
+    .querySelector("#coin2_container")
+    .addEventListener("click", coinClicked);
+  document
+    .querySelector("#coin3_container")
+    .addEventListener("click", coinClicked);
+  document
+    .querySelector("#bomb_container")
+    .addEventListener("click", bombClicked);
 }
 
 function startPositioner() {
@@ -91,13 +105,19 @@ function coinRestart() {
   let coin = this;
 
   // Sæt tilfældig position
-  coin.classList.remove("position1", "position2", "position3", "position4", "position5");
-  let position = Math.floor(Math.random() * 5);
+  coin.classList.remove(
+    "position1",
+    "position2",
+    "position3",
+    "position4",
+    "position5"
+  );
+  let position = Math.floor(Math.random() * 5)+1;
   coin.classList.add("position" + position);
 
   // Sæt tilfældig hastighed
-  coin.classList.remove("speed1", "speed2", "speed3");
-  let speed = Math.floor(Math.random() * 5);
+  coin.classList.remove("speed1", "speed2", "speed3", "speed4");
+  let speed = Math.floor(Math.random() * 4)+1;
   coin.classList.add("speed" + speed);
 
   coin.classList.remove("falling");
@@ -108,7 +128,9 @@ function coinRestart() {
 function bombClicked() {
   console.log("Click bomb");
   // Forhindr gentagne clicks
-  document.querySelector("#bomb_container").removeEventListener("click", bombClicked);
+  document
+    .querySelector("#bomb_container")
+    .removeEventListener("click", bombClicked);
 
   // Stop coin container
   document.querySelector("#bomb_container").classList.add("paused");
@@ -117,14 +139,18 @@ function bombClicked() {
   document.querySelector("#bomb_sprite").classList.add("zoom_in");
 
   // når forsvind-animation er færdig: coinGone
-  document.querySelector("#bomb_container").addEventListener("animationend", bombGone);
+  document
+    .querySelector("#bomb_container")
+    .addEventListener("animationend", bombGone);
 
   mistLiv();
 }
 
 function bombGone() {
   // fjern event der bringer os herind
-  document.querySelector("#bomb_container").removeEventListener("animationend", bombGone);
+  document
+    .querySelector("#bomb_container")
+    .removeEventListener("animationend", bombGone);
 
   // fjern forsvind-animation
   document.querySelector("#bomb_sprite").classList.remove("zoom_in");
@@ -138,7 +164,9 @@ function bombGone() {
   document.querySelector("#bomb_container").classList.add("falling");
 
   // gør det muligt at klikke på bomb igen
-  document.querySelector("#bomb_container").addEventListener("click", bombClicked);
+  document
+    .querySelector("#bomb_container")
+    .addEventListener("click", bombClicked);
 }
 
 function givPoint() {

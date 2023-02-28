@@ -74,7 +74,7 @@ function coinGone() {
   coin.removeEventListener("animationend", coinGone);
 
   // fjern forsvind-animation
-  coin.querySelector("img").classList.remove("Zoom_out");
+  coin.querySelector("img").classList.remove("zoom_out");
 
   // fjern pause
   coin.classList.remove("paused");

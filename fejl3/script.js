@@ -58,7 +58,7 @@ function coinClicked() {
   coin.classList.add("paused");
 
   // sæt forsvind-animation på coin
-  coin.classList.add("zoom_out");
+  coin.querySelector("img").classList.add("zoom_out");
 
   // når forsvind-animation er færdig: coinGone
   coin.addEventListener("animationend", coinGone);
